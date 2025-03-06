@@ -1,6 +1,5 @@
 import { Redis } from "@upstash/redis";
 import { type NextRequest, NextResponse } from "next/server";
-import { ipAddress } from "@vercel/functions";
 
 const redis = Redis.fromEnv();
 
@@ -18,7 +17,11 @@ export async function GET(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
-  const ip = ipAddress(request);
+  // Get IP from Cloudflare's specific header
+  const ip = request.headers.get('CF-Connecting-IP') || 
+             request.headers.get('X-Forwarded-For')?.split(',')[0] || 
+             "unknown-ip";
+             
   const searchParams = request.nextUrl.searchParams;
   const hasSlug = searchParams.has("slug");
   const slug = hasSlug ? searchParams.get("slug") : undefined;
@@ -44,12 +47,12 @@ export async function POST(request: NextRequest) {
     });
 
     if (!isNew) {
-      new NextResponse("Already Increased Counter", { status: 200 });
+      return new NextResponse("Already Increased Counter", { status: 200 });
     }
   }
 
   if (!slug) {
-    new NextResponse("Slug Not Found", { status: 404 });
+    return new NextResponse("Slug Not Found", { status: 404 });
   }
 
   await redis.incr(["pageviews", "posts", slug].join(":"));
