@@ -15,7 +15,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = allBrews.find((c) => c.slug === slug);
   return {
-    metadataBase: new URL("https://brew.mxkaske.dev"),
+    metadataBase: new URL("https://mxkaske.dev"),
     title: post?.title,
     description: post?.description,
     twitter: {
@@ -29,7 +29,7 @@ export async function generateMetadata({
       images: [`/api/og?title=${post?.title}&description=${post?.description}`],
       title: post?.title,
       description: post?.description,
-      url: `/posts/${post?.slug}`,
+      url: `/brew/posts/${post?.slug}`,
     },
   };
 }

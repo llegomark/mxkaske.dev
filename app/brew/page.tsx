@@ -4,13 +4,13 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { formatDay } from "@/lib/formats";
 
-const TITLE = "brew.mxkaske.dev";
+const TITLE = "Brew";
 const DESCRIPTION = "Never. Stop. Brewing.";
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  metadataBase: new URL("https://brew.mxkaske.dev"),
+  metadataBase: new URL("https://mxkaske.dev"),
   twitter: {
     images: [`/api/og?title=${TITLE}&description=${DESCRIPTION}`],
     card: "summary_large_image",

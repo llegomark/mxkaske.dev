@@ -15,15 +15,15 @@ export function Header({
         <Name />
       </div>
       <div>
-        <Link href="https://mxkaske.dev" internal>
+        <Link href="/" internal>
           Home
         </Link>
         <span className="mx-2 text-muted-foreground">·</span>
-        <Link href="https://craft.mxkaske.dev" internal>
+        <Link href="/craft" internal>
           Craft
         </Link>
         <span className="mx-2 text-muted-foreground">·</span>
-        <Link href="https://brew.mxkaske.dev" internal>
+        <Link href="/brew" internal>
           Brew
         </Link>
       </div>

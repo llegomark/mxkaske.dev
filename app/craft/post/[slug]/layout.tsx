@@ -11,7 +11,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = allCrafts.find((c) => c.slug === slug);
   return {
-    metadataBase: new URL("https://craft.mxkaske.dev"),
+    metadataBase: new URL("https://mxkaske.dev"),
     title: post?.title,
     description: post?.description,
     twitter: {
@@ -25,7 +25,7 @@ export async function generateMetadata({
       images: [`/api/og?title=${post?.title}&description=${post?.description}`],
       title: post?.title,
       description: post?.description,
-      url: `/posts/${post?.slug}`,
+      url: `/craft/post/${post?.slug}`,
     },
   };
 }

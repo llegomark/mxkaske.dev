@@ -24,7 +24,7 @@ const crafts = defineCollection({
     return {
       ...document,
       slug: document._meta.fileName.replace(/\.mdx$/, ""),
-      url: `/post/${document._meta.fileName.replace(/\.mdx$/, "")}`,
+      url: `/craft/post/${document._meta.fileName.replace(/\.mdx$/, "")}`,
       readingTime: readingTime(document.content).text,
       mdx,
     };
@@ -48,7 +48,7 @@ const brews = defineCollection({
     return {
       ...document,
       slug: document._meta.fileName.replace(/\.mdx$/, ""),
-      url: `/post/${document._meta.fileName.replace(/\.mdx$/, "")}`,
+      url: `/brew/post/${document._meta.fileName.replace(/\.mdx$/, "")}`,
       readingTime: readingTime(document.content).text,
       mdx,
     };

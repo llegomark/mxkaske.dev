@@ -5,13 +5,13 @@ import { Thumbnail } from "./_components/thumbnail";
 import { Metadata } from "next";
 import { BasicLayout } from "../_components/basic-layout";
 
-const TITLE = "craft.mxkaske.dev";
+const TITLE = "Craft";
 const DESCRIPTION = "Never. Stop. Crafting.";
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  metadataBase: new URL("https://craft.mxkaske.dev"),
+  metadataBase: new URL("https://mxkaske.dev"),
   twitter: {
     images: [`/api/og?title=${TITLE}&description=${DESCRIPTION}`],
     card: "summary_large_image",

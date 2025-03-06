@@ -2,12 +2,12 @@ import { allBrews, allCrafts } from "@/.content-collections/generated";
 import { MetadataRoute } from "next";
 
 const crafts = allCrafts.map((craft) => ({
-  url: `https://craft.mxkaske.dev/post/${craft.slug}`,
+  url: `https://mxkaske.dev/craft/post/${craft.slug}`,
   lastModified: craft.date,
 }));
 
 const brews = allBrews.map((brew) => ({
-  url: `https://brew.mxkaske.dev/post/${brew.slug}`,
+  url: `https://mxkaske.dev/brew/post/${brew.slug}`,
   lastModified: brew.date,
 }));
 
